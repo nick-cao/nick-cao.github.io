@@ -40,23 +40,25 @@ p {
 }
 
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
     :root:not([data-theme="light"]):not([data-theme="dark"]) {
-    --bg-color: #000000;
-    --text-color: #ffffff;
+    --bg-color: #ffffff;
+    --text-color: #000000;
     --link-color: #0000ff;
     --visited-color: #5000bf;
     --active-color: #000080;
     }
 }
 
-@media (prefers-color-scheme: light) {
+
+@media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]):not([data-theme="dark"]) {
-    --bg-color: #ffffff;
-    --text-color: #000000;
+    --bg-color: #000000;
+    --text-color: #ffffff;
     --link-color: #00bbff;
     --visited-color: #b580ff;
     --active-color: #80ddff;
+    
     }
 }
 
