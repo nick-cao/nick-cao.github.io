@@ -12,21 +12,113 @@ img {
     height: auto;
 }
 article{
+    font-size: 120%;
     width: 48em;
-    max-width:100%;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
 
-</style>
+p {
+  font-size: 1em;
+}
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --link-color: #0000ff;
+    --visited-color: #5000bf;
+    --active-color: #000080;
+}
+
+[data-theme="dark"] {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --link-color: #00bbff;
+    --visited-color: #b580ff;
+    --active-color: #80ddff;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]):not([data-theme="dark"]) {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme="light"]):not([data-theme="dark"]) {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    }
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--visited-color);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  color: var(--active-color);
+  text-decoration: underline;
+}
+
+
+</style>
 </head>
 
 <body>
 <body style="font-family:georgia;">
 
-
-
 <article>
+
+<p align="right">
+<label for="themeSelect">☼/☽:</label>
+<select name="themeSelect" id="themeSelect">
+    <option value="system" selected>System</option>
+    <option value="light">Light</option>
+    <option value="dark">Dark</option>
+</select>
+</p>
+
+<script>
+    const body = document.body;
+    const select = document.getElementById('themeSelect');
+
+    function updateTheme(theme) {
+      // If user chooses "system", remove data-theme altogether.
+      if (theme === 'system') {
+        body.removeAttribute('data-theme');
+      } else {
+        body.setAttribute('data-theme', theme);
+      }
+    }
+
+    // Initial load: set theme to the select's current value
+    updateTheme(select.value);
+
+    // Listen for dropdown changes
+    select.addEventListener('change', (e) => {
+      updateTheme(e.target.value);
+    });
+</script>
+
+
 <img src="paisley-pattern-green.jpg" width="479" height="480">
 
 <h1>Nick Lee Cao</h1>
@@ -63,11 +155,11 @@ mostly following David G Luenberger's <i>Optimization by Vector Space Methods</i
 On my <a href = "https://github.com/nick-cao/Notes" target="_blank">Github page</a>, I have some <a href = "https://github.com/nick-cao/Notes/blob/master/Decision-Tree.tex" target="_blank">LaTeX/TikZ code</a> for drawing the decision tree of a signalling game. The end result looks like <a href = "https://github.com/nick-cao/Notes/blob/master/Decision-Tree.pdf" target="_blank">this</a>.
 </li>
 <li>
-Notes on the <a href = "https://nickcao.com/Partnership-dissolution.html">circumstances under which a partnership can be efficiently dissolved</a>, following the Gibbons and Klemperer <i>Econometrica</i> paper (1987, Vol. 55, No. 3).
+Notes on the <a href = "partnership_dissolution.html">circumstances under which a partnership can be efficiently dissolved</a>, following the Gibbons and Klemperer <i>Econometrica</i> paper (1987, Vol. 55, No. 3).
 </li>
 <li>
 My <a href = "https://profiles.stanford.edu/nickcao" target="_blank">Stanford profile</a>.
-</li}
+</li>
 </ul>
 
 
