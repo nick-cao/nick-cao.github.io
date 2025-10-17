@@ -7,87 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-img {
-    max-width: 100%;
-    height: auto;
-}
-article{
-    font-size: 120%;
-    width: 40em;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-p {
-  font-size: 1em;
-}
-
-:root {
-    --bg-color: #ffffff;
-    --text-color: #000000;
-    --link-color: #0000ff;
-    --visited-color: #5000bf;
-    --active-color: #000080;
-}
-
-[data-theme="dark"] {
-    --bg-color: #000000;
-    --text-color: #ffffff;
-    --link-color: #00bbff;
-    --visited-color: #b580ff;
-    --active-color: #80ddff;
-}
-
-
-@media (prefers-color-scheme: light) {
-    :root:not([data-theme="light"]):not([data-theme="dark"]) {
-    --bg-color: #ffffff;
-    --text-color: #000000;
-    --link-color: #0000ff;
-    --visited-color: #5000bf;
-    --active-color: #000080;
-    }
-}
-
-
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]):not([data-theme="dark"]) {
-    --bg-color: #000000;
-    --text-color: #ffffff;
-    --link-color: #00bbff;
-    --visited-color: #b580ff;
-    --active-color: #80ddff;
-    
-    }
-}
-
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.3s, color 0.3s;
-}
-
-a {
-  color: var(--link-color);
-  text-decoration: none;
-}
-
-a:visited {
-  color: var(--visited-color);
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-a:active {
-  color: var(--active-color);
-  text-decoration: underline;
-}
-
-
 </style>
+<link rel="stylesheet" href="stylesheets/styles.css">
+<script src="theme.js" defer></script>
 </head>
 
 <body>
@@ -104,73 +26,100 @@ a:active {
 </select>
 </p>
 
-<script>
-    const body = document.body;
-    const select = document.getElementById('themeSelect');
-
-    function updateTheme(theme) {
-      // If user chooses "system", remove data-theme altogether.
-      if (theme === 'system') {
-        body.removeAttribute('data-theme');
-      } else {
-        body.setAttribute('data-theme', theme);
-      }
-    }
-
-    // Initial load: set theme to the select's current value
-    updateTheme(select.value);
-
-    // Listen for dropdown changes
-    select.addEventListener('change', (e) => {
-      updateTheme(e.target.value);
-    });
-</script>
-
-
-<img src="paisley-pattern-green.jpg" width="479" height="480">
 
 <h1>Nick Lee Cao</h1>
 
-<p>Thanks for stopping by! I'm currently working on macroeconomic topics as a PhD student at Stanford University. More on this forthcoming…</p>
+<!-- <img src="headshot.jpg" width="320" height="400"> -->
 
+<div class="media-block">
+<img src="headshot.jpg"/>
+<div class="text">
+    
+<p>
+I am a PhD candidate in the Department of Economics at Stanford University.
+My research is in macroeconomics and international finance.
+I study questions related to exchange rates, international portfolios, technology flows, and the diffusion of economic growth.
+</p>
 
+<p>
+I am on the academic job market in 2025–26.
+</p>
 
-<h3>Some links</h3>
+<p>
+<b>CV:</b> <a href="Resources/Nick-Cao-CV.pdf">pdf</a>
+</p>
 
+<p>
+<b>Contact:</b>
+<a href = "mailto:ncao@stanford.edu">ncao@stanford.edu</a>
+</p>
 
+<h4>Committee</h4>
 <ul>
 <li>
-My
-<a href = "https://drive.google.com/file/d/1F6vvrEBzVb2nB7EnaPI4XwG_jtZes12P/view?usp=sharing" target="_blank">
-honours thesis</a>,
-written at the University of Sydney in 2018.
-<ul>
-<li>
-The first chapter explores the Diamond paradox: that when consumers have to pay a cost to search different stores to discover their prices, no matter how small the cost (as long as it is above zero), the prevailing market price necessarily is the price that a monopolist would charge. By introducing repeat customers, I show that a price below the monopoly price can also prevail as the equilibrium outcome.
+Prof. Patrick Kehoe (primary)
 </li>
 <li>
-The second chapter dispenses with the usual assumption in economics that property rights can be enforced without cost, and proves some results about the degree to which people will fund security to protect their property rights, and the profitability of expropriating others.
-</li>
-</ul>
-For non-Americans, it is also available in <a href = "https://drive.google.com/open?id=1wnNnFjpIXsoDEnTtmpS3u91SnHCgXIT2" target="_blank">A4 size</a>.
+Prof. Elena Pastorino
 </li>
 <li>
-<a href = "https://github.com/nick-cao/Notes/blob/master/Luenberger%20Notes.pdf" target="_blank">
-Functional Analysis notes and solutions to some exercises</a>, 
-mostly following David G Luenberger's <i>Optimization by Vector Space Methods</i> (published in 1968 and quite a difficult book to find in print now)
-</li>
-<li>
-On my <a href = "https://github.com/nick-cao/Notes" target="_blank">Github page</a>, I have some <a href = "https://github.com/nick-cao/Notes/blob/master/Decision-Tree.tex" target="_blank">LaTeX/TikZ code</a> for drawing the decision tree of a signalling game. The end result looks like <a href = "https://github.com/nick-cao/Notes/blob/master/Decision-Tree.pdf" target="_blank">this</a>.
-</li>
-<li>
-Notes on the <a href = "partnership_dissolution.html">circumstances under which a partnership can be efficiently dissolved</a>, following the Gibbons and Klemperer <i>Econometrica</i> paper (1987, Vol. 55, No. 3).
-</li>
-<li>
-My <a href = "https://profiles.stanford.edu/nickcao" target="_blank">Stanford profile</a>.
+Prof. Luigi Bocola
 </li>
 </ul>
 
+</div>
+</div>
 
+
+
+<h3>Job Market Paper</h3>
+
+<h4>Exchange Rates and International Risk Sharing under Home Portfolio Bias</h4>
+
+<p><i>Draft forthcoming.</i></p>
+
+<p>
+The standard view in international macroeconomics is that exchange rate dynamics are inconsistent with the notion that international financial markets enable countries to share risk effectively.
+I develop a model of international financial frictions that is consistent with two facts about international asset holdings: (i) home portfolio bias and (ii) the elasticity of substitution in international portfolio choice, and I show that these portfolio facts characterize the extent to which countries share risk in equilibrium.
+When matched to observed portfolio allocations and elasticities, the model implies extensive international risk sharing, yet it solves the key Backus-Smith exchange rate puzzle, which is that a country's consumption increases when its consumption bundle becomes more expensive (a real exchange rate appreciation).
+In particular, a shock that increases relative demand for a country's goods raises their price and increases their firm's profits;
+under home portfolio bias, it also raises the relative income of domestic households, who own most of the country's firms, so they consume more.
+More generally, this mechanism delivers the procyclical, volatile, and persistent exchange rates seen in the data, whereas other popular shocks in the literature cannot do so when matched to observed portfolios.
+</p>
+
+
+
+<h3>Working Papers</h3>
+
+<h4><a href = "Resources/technology_diffusion_technology_stealing.pdf">From Drip to Dispossession:<br>International Technology Diffusion and Technology Stealing</a></h4>
+
+<p>
+Production technologies differ enormously across countries. 
+Given that wages are lower in poor countries, it is puzzling that international technology diffusion occurs so slowly.
+I develop a model of the speed of technology diffusion consistent with this phenomenon:
+although firms want to transfer production technology abroad to enjoy lower wages,
+doing so exposes them to the risk of foreign competitors imitating or stealing their technology. 
+Critically, foreign governments cannot credibly commit ex ante to prevent technology stealing. 
+In an optimal-contracting framework, 
+slow technology transfers incentivize foreign governments to limit the rate of stealing 
+by back-loading promises of future transfers. 
+However, in the long run, once the firm has no technology left to transfer, 
+its foreign competitors steal its technology, abetted by their government.
+Firms prefer higher short-run profits from producing abroad at lower wages 
+over maintaining their long-run technological lead. 
+Quantitatively, the model generates slow international technology diffusion 
+but eventual catch-up over multiple decades.
+</p>
+
+<br><br>
+
+<p>
+<a href = "resources.html">Additional links</a>
+</p>
+
+<p>
+<small><i>Photo by Vanessa Coleman</i></small>
+</p>
 
 </article>
 
